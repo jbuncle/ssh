@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+# Generate ssh keys if they don't exist
+
+set -e
+set -u
+
+
+KEYPATH=$1
+PUBKEYPATH=${KEYPATH}.pub
+
+mkdir -p $(dirname ${KEYPATH})
+
+test -f ${KEYPATH}    || ssh-keygen -b 2048 -t rsa -f ${KEYPATH} -q -N ""

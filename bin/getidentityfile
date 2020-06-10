@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+set -e
+
+awk '/^\s*IdentityFile (.*)$/{ print $2 }' /etc/ssh/ssh_config 

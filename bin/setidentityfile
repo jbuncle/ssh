@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+set -e
+set -u
+
+if grep -E "^\s*IdentityFile .*$" /etc/ssh/ssh_config ; then
+    # Replace
+    sed -i -E "s@^\s*IdentityFile .*$@IdentityFile $1@gm;t;d"
+else 
+    # Append
+    echo IdentityFile $1 >> /etc/ssh/ssh_config
+fi

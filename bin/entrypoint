@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+set -e
+
+#[[ -z "${KEYPATH}" ]] && KEYPATH='~/.ssh/id_rsa' || KEYPATH="${KEYPATH}"
+#echo KEYPATH=${KEYPATH}
+#gensetkey $KEYPATH
+#printpub $KEYPATH
+
+exec "$@"
